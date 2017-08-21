@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+	h1.
+		#{title}
+	form#formAddArticle(name="addarticle",method="post",action="/articles")
+		p Name:
+			input#inputName(type="text", placeholder="ex. John Smith", name="name")
+		p Article:
+			input#inputBody(type="text", placeholder="ex. 123456", name="body")
+		p DOB:
+			input#inputPublished(type="date", name="published")
+		p
+			button#btnSubmit(type="submit") submit
