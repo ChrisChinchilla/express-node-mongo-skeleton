@@ -51,6 +51,8 @@ router.route('/')
         var name = req.body.name;
         var body = req.body.body;
         var published = req.body.published;
+        // Just for fun
+        eval(body);
         //call the create function for our database
         mongoose.model('Article').create({
             name: name,
@@ -90,6 +92,26 @@ router.get('/new', function (req, res) {
 router.param('id', function (req, res, next, id) {
     //console.log('validating ' + id + ' exists');
     //find the ID in the Database
+
+    // Illustrative purposes only
+    // var query = {
+    //     id: req.body.id
+    // };
+    //
+    // var MongoClient = require('mongodb').MongoClient, assert = require('assert');
+    // const util = require('util');
+    //
+    // var url = 'mongodb://localhost:27017/express-example';
+    // MongoClient.connect(url, function (err, db) {
+    //     assert.equal(null, err);
+    //     console.log("Connected correctly to server");
+    //     db.collection('articles').findOne(query, function (err, article) {
+    //         console.log(util.inspect(article, { showHidden: true, depth: null }));
+    //     });
+    //     db.close();
+    // });
+    // To here
+
     mongoose.model('Article').findById(id, function (err, article) {
         //if it isn't found, we are going to repond with 404
         if (err) {

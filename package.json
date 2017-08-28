@@ -11,9 +11,24 @@
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "jade": "~1.11.0",
-    "mongoose": "^4.11.7",
+    "method-override": "^2.3.1",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.8",
     "morgan": "~1.8.1",
-    "serve-favicon": "~2.4.2",
-    "method-override": "^2.3.1"
-  }
+    "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.5.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "pre-commit": "^1.2.2"
+  },
+  "eslint": "./node_modules/.bin/eslint */*.js",
+  "pre-commit": [
+    "eslint"
+  ]
 }
